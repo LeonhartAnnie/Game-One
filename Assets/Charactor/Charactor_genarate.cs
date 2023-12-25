@@ -8,8 +8,8 @@ public class Charactor_genarate : MonoBehaviour
     public GameObject littleGhostPrefab; // 將 "LittleGhost_LP (4)" 預製物拖放到這裡
     void Start()
     {
-        CubeManager.Charactor_spawn_position = new Vector3(0,10,10);
+        //CubeManager.Charactor_spawn_position = new Vector3(0,10,10);
         // 在遊戲開始時生成預製物
-        Instantiate(littleGhostPrefab, CubeManager.Charactor_spawn_position, Quaternion.identity);
+        //Instantiate(littleGhostPrefab, CubeManager.Charactor_spawn_position, Quaternion.identity);
     }
 }
