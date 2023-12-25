@@ -22,8 +22,9 @@ public class CubeClickDetection : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Ground_Cube")) // 检测是否点击到了 Cube
                 {
-                    Vector3 cubePosition = hit.collider.transform.position;
-                    Debug.Log("Clicked on "+hit.collider.name+" at position: " + cubePosition);
+                    CubeManager.Cube_position = hit.collider.transform.position;
+                    CubeManager.Cube_position = new Vector3(CubeManager.Cube_position.x, CubeManager.Cube_position.y + 6, CubeManager.Cube_position.z);
+                    Debug.Log("Clicked on "+hit.collider.name+" at position: " + CubeManager.Cube_position);
                 }
             }
         }
