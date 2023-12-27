@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Camera_Rotation : MonoBehaviour
+public class Camera_Rotation : NetworkBehaviour
 {
     public float camera_sensitivity = 1.5f;
     // Start is called before the first frame update
@@ -14,7 +15,12 @@ public class Camera_Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouse_dx = Input.GetAxis("Mouse X");
+        //if (!isLocalPlayer) return;
+        Move();
+    }
+    private void Move()
+    {
+         float mouse_dx = Input.GetAxis("Mouse X");
         float mouse_dy = Input.GetAxis("Mouse Y");
 
         // 根据鼠标移动设置摄像头的旋转

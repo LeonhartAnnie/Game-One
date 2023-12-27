@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class MouseLockController : MonoBehaviour
+public class MouseLockController : NetworkBehaviour
 {
     // Start is called before the first frame update
     private bool isMouseLocked = true;
 
     void Start()
     {
+        
         LockMouse();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //if (!isLocalPlayer) return;
         if (Input.GetKeyDown(KeyCode.Q))
         {
             ToggleMouseLock();
